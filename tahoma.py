@@ -20,9 +20,6 @@ for deviceURL, value in devices.items():
 
 @app.route('/execute/<string:label>/<string:command>', methods=['GET'])
 def execute(label, command):
-    if command not in ['up', 'my', 'down']:
-        return jsonify(success=False, message='Command not found')
-
     data = {
         "commands": [
             {
